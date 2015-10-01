@@ -29,7 +29,10 @@ public class PropertyBinding : MonoBehaviour
         TargetProperty = tempTarget.FirstOrDefault();
         SourceProperty = tempSource.FirstOrDefault();
         #endif
+    }
 
+    void Start()
+    {
         SourceProperty.ObserveEveryValueChanged(x => x.GetValue(Source, null)).Subscribe(UpdateTargetProperty);
     }
 
