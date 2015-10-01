@@ -15,7 +15,7 @@ public class PropertyBinding : MonoBehaviour
     public MonoBehaviour    Source;
     public MonoBehaviour    Target;
 
-    void Start()
+    void Awake()
     {
         #if !UNITY_EDITOR
         var tempTarget = from targetProp in Target.GetType().GetProperties()
